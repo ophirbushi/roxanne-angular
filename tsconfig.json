@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "roxanne-angular": [
+        "dist/roxanne-angular"
+      ],
+      "roxanne-angular/*": [
+        "dist/roxanne-angular/*"
+      ]
+    }
   }
 }
