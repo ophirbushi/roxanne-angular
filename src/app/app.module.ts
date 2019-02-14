@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RoxanneAngularModule } from 'roxanne-angular';
 import { AppState, AppActions } from './models';
-import { appReducer } from './reducer';
+import { appReducerFactory } from './reducer';
 import { appEffects } from './effects';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { appEffects } from './effects';
   ],
   imports: [
     BrowserModule,
-    RoxanneAngularModule.forRoot<AppState, AppActions>({ money: 0 }, appReducer, [appEffects])
+    RoxanneAngularModule.forRoot<AppState, AppActions>({ money: 0 }, appReducerFactory, [appEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

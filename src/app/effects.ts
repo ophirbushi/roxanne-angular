@@ -1,11 +1,8 @@
-import { Effects } from 'roxanne';
 import { AppState, AppActions } from './models';
+import { Store } from 'roxanne';
 
-export const appEffects = new Effects<AppState, AppActions>(
-  function () {
-    this.ofType('addMoney')
-      .subscribe((payload) => {
-        console.log('money added: ', payload);
-      });
-  }
-);
+export function appEffects(store: Store<AppState, AppActions>) {
+  store
+    .actionOfType('addMoney')
+    .subscribe(amount => console.log(`${amount} amount was added.`));
+};
